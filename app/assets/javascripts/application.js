@@ -14,6 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require froala_editor.min.js
+//= require trumbowyg/trumbowyg
 //= require_tree .
 

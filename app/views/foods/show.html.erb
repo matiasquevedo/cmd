@@ -30,7 +30,9 @@
       </div>
       <div class="col">
         <h4>Receta</h4>
-          <%= @food.description %>
+          <div>
+            <%= @food.description.html_safe %>            
+          </div>
       </div>
     </div> 
 

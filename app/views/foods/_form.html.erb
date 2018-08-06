@@ -12,30 +12,35 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :food_name %>
+    <label>Comida</label>
+    <%= form.text_field :name, id: :food_name, class: "form-control" %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :food_description %>
+    <label>Receta</label>
+    <%= form.text_area :description, id: :food_description, class: "form-control", id: "receta" %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :food_price %>
+    <label>Precio por Porción</label>
+    <%= form.text_field :price, id: :food_price, class: "form-control" %>
   </div>
 <!-- 
   <div class="field">
     <%= form.label :menu_id %>
-    <%= form.text_field :menu_id, id: :food_menu_id %>
+    <%= form.text_field :menu_id, id: :food_menu_id, class: "form-control" %>
   </div>
  -->
+  <br>
   <div class="field">
-    <%= form.collection_select(:menu_id , Menu.all, :id, :name, :prompt => 'Menu') %>
+    <%= form.collection_select(:menu_id , Menu.all, :id, :name, {:prompt => 'Menu'}, {:class=>'custom-select'}) %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit "Crear Comida", class: "btn btn-primary" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <script>
+    $('#receta').trumbowyg();
+  </script>
 <% end %>

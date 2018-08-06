@@ -20,7 +20,7 @@
 
   <div class="field">
     <label >Descripción</label>
-    <%= form.text_area :description, class: "form-control Froala" %>
+    <%= form.text_area :description, class: "form-control Froala", id: "description" %>
   </div>
 
   <br>
@@ -35,4 +35,8 @@
   <div class="actions">
     <%= form.submit "Crear Menu", class: "btn btn-primary" %>
   </div>
+
+  <script>
+    $('#description').trumbowyg();
+  </script>
 <% end %>

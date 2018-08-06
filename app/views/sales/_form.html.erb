@@ -15,14 +15,13 @@
     <label> Estado</label>
     <%= form.text_field :status, id: :sale_status, class: "form-control" %>
   </div>
-
+  <br>
   <div class="field">
     <label> Fecha de Entrega</label><br>
-   <!--  <%= form.datetime_field :shippedDate, id: :sale_shippedDate, class: "form-control" %> -->
-   <input type="text" data-provide='datepicker' >
+   <%= form.datetime_field :shippedDate, id: :sale_shippedDate, class: "form-control", type: "date" %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Enviar" , class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -2,7 +2,9 @@
 	<p id="notice"><%= notice %></p>
 
 	<h2 style="color: <%= @menu.color %>">Menu: <%= @menu.name %></h2>
-	<p><%= @menu.description %></p>
+	<div>
+		<%= @menu.description.html_safe %>
+	</div>
 
 	<h4>Comidas</h4>
 	<% if @menu.foods.any? %>
