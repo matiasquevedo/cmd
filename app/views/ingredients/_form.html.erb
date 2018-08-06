@@ -1,0 +1,37 @@
+<%= form_for([@food, @ingredient]) do |form| %>
+  <% if @ingredient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ingredient.errors.count, "error") %> prohibited this ingredient from being saved:</h2>
+
+      <ul>
+      <% @ingredient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <label>Ingrediente</label>
+    <%= form.text_field :name, id: :ingredient_name, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <label>Descripción</label>
+    <%= form.text_field :description, id: :ingredient_description, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <label>Cantidad</label>
+    <%= form.text_field :quantity, id: :ingredient_quantity, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <label>Precio</label>
+    <%= form.text_field :total_price, id: :ingredient_total_price, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Agregar Ingrediente", class: "btn btn-primary"%>
+  </div>
+<% end %>

@@ -1,0 +1,26 @@
+<%= form_for([@sale, @portion]) do |form| %>
+  <% if @portion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@portion.errors.count, "error") %> prohibited this portion from being saved:</h2>
+
+      <ul>
+      <% @portion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.collection_select(:food_id , Food.all, :id, :name, :prompt => 'Comida') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity, id: :portion_quantity %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

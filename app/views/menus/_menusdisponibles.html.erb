@@ -1,0 +1,43 @@
+<div class="container">
+	<h2>Menus del Dia </h2>
+	<p><i><%= Date.today.to_s %></i></p>
+	<div class="row">
+		<% @menus.each do |m| %>
+		<div class="col">
+			<div class="card" style="width: 18rem; background-color: <%= m.color %>">
+			  <div class="card-body">
+			    <h5 class="card-title"><%= link_to m.name, menu_url(m), class: "card-title" %></h5>
+
+			    <% if m.foods.any? %>
+			    	    	<% m.foods.each do |f| %>
+
+			    				<ul class="list-group list-group-flush" >
+			    				  <li class="list-group-item" style="background-color: <%= m.color %>"><%= f.name %> 
+			    				  <% if f.portions.count > 0 %>			    	  	
+			    				   <span class="text-right badge badge-secondary"><%= f.portions.count %></span>
+			    				   <% end %>
+			    				   </li>
+			    				</ul>
+
+			    	    	<% end %>
+			    <% else %>
+			    	<ul class="list-group list-group-flush">
+			    		<li class="list-group-item" style="background-color: <%= m.color %>">
+			    			<div class="text-center">
+			    				<p><i>No hay comidas</i></p>
+			    			</div>
+			    		</li>
+			    	</ul>
+			    <% end  %>
+			  </div>
+			</div>	
+		</div>
+		<% end %>
+	</div>
+</div>
+
+
+
+
+			    	
+				    	

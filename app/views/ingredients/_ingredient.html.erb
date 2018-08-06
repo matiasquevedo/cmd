@@ -1,0 +1,8 @@
+<tr>
+  <td><%= ingredient.quantity %></td>
+  <td><%= link_to ingredient.name, food_ingredients_path(ingredient.food,ingredient) %></td>
+  <td><%= ingredient.total_price %></td>
+  
+  <td><%= link_to 'Edit', edit_food_ingredient_path(ingredient.food,ingredient) %></td>
+  <td><%= link_to 'Destroy', food_ingredients_path(ingredient.food,ingredient), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

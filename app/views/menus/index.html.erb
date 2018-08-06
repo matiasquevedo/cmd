@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <h1>Menus</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Menu</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @menus.each do |menu| %>
+        <tr>
+          <td><%= link_to menu.name, menu %></td>          
+          <td><%= link_to link_badge('warning','fa-edit'), edit_menu_path(menu) %></td>
+          <td><%= link_to link_badge('danger','fa-trash-alt'), menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Nuevo Menu', new_menu_path, class: "btn btn-primary" %>
+  <%= link_to 'Comidas', foods_path, class: "btn btn-primary" %>
+  
+</div>

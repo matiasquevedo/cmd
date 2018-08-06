@@ -1,0 +1,38 @@
+<%= form_with(model: menu, local: true) do |form| %>
+  <% if menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+      <% menu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <label >Menu</label>
+    <%= form.text_field :name, class: "form-control"%>
+  </div>
+
+  <br>
+
+  <div class="field">
+    <label >Descripción</label>
+    <%= form.text_area :description, class: "form-control Froala" %>
+  </div>
+
+  <br>
+
+  <div class="field">
+    <label >Color</label>
+    <%= form.color_field :color, id: :category_color , class: "form-control" %>
+  </div>
+
+  <br>
+
+  <div class="actions">
+    <%= form.submit "Crear Menu", class: "btn btn-primary" %>
+  </div>
+<% end %>

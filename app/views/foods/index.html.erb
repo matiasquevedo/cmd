@@ -1,0 +1,26 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Comidas</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Comida</th>
+        <th>Precio</th>
+        <th>Menu</th>
+        <th colspan="2"> Opciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render @foods %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Nueva Comida', new_food_path, class: "btn btn-primary" %>
+  
+</div>
+

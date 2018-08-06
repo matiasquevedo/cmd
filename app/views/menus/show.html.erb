@@ -1,0 +1,25 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+
+	<h2 style="color: <%= @menu.color %>">Menu: <%= @menu.name %></h2>
+	<p><%= @menu.description %></p>
+
+	<h4>Comidas</h4>
+	<% if @menu.foods.any? %>
+		<table class="table">
+		  <tr>
+		    <th>Nombre</th>
+		    <th>Precio</th>
+		    <th>Menu</th>
+		    <th colspan="3"></th>
+		  </tr>
+		  <%= render @menu.foods %> <br>
+		</table>	
+	<% else %>
+		<p><i>No hay comidas</i></p>
+	<% end %>
+
+
+	<%= link_to 'Editar', edit_menu_path(@menu) %>
+</div>
+

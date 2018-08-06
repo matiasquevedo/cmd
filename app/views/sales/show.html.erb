@@ -1,0 +1,53 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+	<div class="row">
+		<div class="col-s-2">
+			<h4>Pedido n°: <%= @sale.id %></h4>
+
+			<p>
+			  <strong>Estado del Pedido:</strong>
+			  <%= @sale.status %>
+			</p>
+
+			<p>
+			  <strong>Total a Pagar:</strong>
+			  <%= @sale.total %>
+			</p>
+
+			<p>
+			  <strong>Fecha de Entrega:</strong>
+			  <%= @sale.shippedDate %>
+			</p>
+		</div>
+		<div class="col-s-10">
+			<h3>Detalle</h3>
+			<table>
+			  <thead>
+			    <tr>
+			      <th>Comida</th>
+			      <th>Precio</th>
+			      <th>Cantidad</th>
+			      <th>Subtotal</th>
+			    </tr>
+			  </thead>
+
+			  <tbody>
+			    <%= render @sale.portions %>
+			  </tbody>
+			</table>
+		</div>
+	</div>
+	
+
+	
+
+
+
+	<div>
+		<h5>Nueva Porcion</h5>
+		<%= render 'portions/form' %>
+	</div>
+
+	<%= link_to 'Edit', edit_sale_path(@sale) %> |
+	<%= link_to 'Back', sales_path %>
+</div>

@@ -1,0 +1,8 @@
+<tr>
+  <td class="text-center"><%= link_to sale.id, sale %></td>
+  <td><%= sale.status %></td>
+  <td><%= sale.total %></td>
+  <td><%= sale.shippedDate %></td>
+  <td><%= link_to link_badge('warning','fa-edit'), edit_sale_path(sale) %></td>
+  <td><%= link_to link_badge('danger','fa-trash-alt'), sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
